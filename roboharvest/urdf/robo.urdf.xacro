@@ -1,0 +1,1323 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="roboharvest" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="base_link">
+      <visual>
+      <material>
+          <ambient>192 192 192 1</ambient>
+          <diffuse>192 192 192 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+      </material>
+      </visual>
+  </xacro:macro>
+
+  <xacro:macro name="front_right">
+      <visual>
+      <material>
+          <ambient>75 80 70 1</ambient>
+          <diffuse>75 80 70 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+      </material>
+      </visual>
+  </xacro:macro>
+
+  <xacro:macro name="front_left">
+      <visual>
+      <material>
+          <ambient>75 80 70 1</ambient>
+          <diffuse>75 80 70 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+      </material>
+      </visual>
+  </xacro:macro>
+
+  <xacro:macro name="rear_left">
+      <visual>
+      <material>
+          <ambient>75 80 70 1</ambient>
+          <diffuse>75 80 70 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+      </material>
+      </visual>
+  </xacro:macro>
+
+  <xacro:macro name="rear_right">
+      <visual>
+      <material>
+          <ambient>75 80 70 1</ambient>
+          <diffuse>75 80 70 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+      </material>
+      </visual>
+  </xacro:macro>
+
+  <xacro:macro name="walle_head">
+      <visual>
+      <material>
+          <ambient>169 169 169 1</ambient>
+          <diffuse>169 169 169 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+      </material>
+      </visual>
+  </xacro:macro>
+
+
+
+  <!-- # Add this before base link
+  <link name="dummy_link"></link> -->
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000388315155439126 -0.000246415116432942 0.031353898640965"
+        rpy="0 0 0" />
+      <mass
+        value="121.617841669888" />
+      <inertia
+        ixx="2.34302868736616"
+        ixy="0.00879017006194074"
+        ixz="-0.0428506040334107"
+        iyy="8.25093215351618"
+        iyz="-0.0116556489164161"
+        izz="9.73837072519835" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!-- Base Footprint Link-->
+
+  <joint name = "base_footprint_j" type = "fixed">
+    <origin xyz = "0 0 0" rpy = "0 0 0"/>
+    <parent link = "base_footprint"/>
+    <child link = "base_link"/>
+  </joint>
+
+  <link name= "base_footprint">
+  </link>
+
+  <!-- # Add this after base link
+  <joint name="dummy_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="dummy_link"/>
+    <child link="base"/>
+  </joint> -->
+
+  <link
+    name="front_right">
+    <inertial>
+      <origin
+        xyz="-6.78717970714615E-10 1.09086044641771E-08 0.134444489467587"
+        rpy="0 0 0" />
+      <mass
+        value="30.6884680089216" />
+      <inertia
+        ixx="0.595815452910559"
+        ixy="-2.25204956072478E-08"
+        ixz="-1.53377796531171E-09"
+        iyy="0.595815644901867"
+        iyz="-4.56210336938212E-08"
+        izz="0.910300957186937" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/front_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/front_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_j"
+    type="continuous">
+    <origin
+      xyz="0.266042687798557 -0.238761470703757 -0.0952502670364748"
+      rpy="1.57942123407871 -0.419602280003633 -0.00494458865107535" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front_left">
+    <inertial>
+      <origin
+        xyz="-4.33936553356773E-10 1.00053629409347E-08 0.133938019458945"
+        rpy="0 0 0" />
+      <mass
+        value="30.6884681324061" />
+      <inertia
+        ixx="0.595815444469247"
+        ixy="-2.4830059175418E-08"
+        ixz="-2.74294234179316E-09"
+        iyy="0.595815641015375"
+        iyz="-4.57405292049635E-08"
+        izz="0.910300946674862" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/front_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/front_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_j"
+    type="continuous">
+    <origin
+      xyz="0.266727643783791 0.23997653699215 -0.091479314618849"
+      rpy="1.56237155647839 -0.362690906963914 -3.14003430832851" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_left">
+    <inertial>
+      <origin
+        xyz="-1.48962842061451E-10 1.08224411099478E-08 0.134041599980716"
+        rpy="0 0 0" />
+      <mass
+        value="30.6884680232696" />
+      <inertia
+        ixx="0.59581545217311"
+        ixy="-2.181218672348E-08"
+        ixz="-4.16910482699262E-10"
+        iyy="0.595815645336111"
+        iyz="-4.60307556486442E-08"
+        izz="0.910300957128926" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/rear_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/rear_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_j"
+    type="continuous">
+    <origin
+      xyz="-0.266668894690048 0.240621830976103 -0.0896662871121348"
+      rpy="-1.55052524383001 -1.17169510288349 -0.0201091297878387" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_right">
+    <inertial>
+      <origin
+        xyz="-1.63488250715105E-10 1.14451541022298E-08 0.134621956474277"
+        rpy="0 0 0" />
+      <mass
+        value="30.6884678376211" />
+      <inertia
+        ixx="0.595815574018795"
+        ixy="-4.15877943749088E-08"
+        ixz="8.4042869315324E-09"
+        iyy="0.595815669332093"
+        iyz="-5.67261778283874E-09"
+        izz="0.910301056514685" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/rear_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/rear_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_j"
+    type="continuous">
+    <origin
+      xyz="-0.267353448578213 -0.237835138005729 -0.0934350258270648"
+      rpy="-1.58135415755208 -0.72867400329929 -3.13599300214289" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="walle_head">
+    <inertial>
+      <origin
+        xyz="-0.146353607008769 0.00242629035045308 -0.0700164000013464"
+        rpy="0 0 0" />
+      <mass
+        value="11.0701333132767" />
+      <inertia
+        ixx="0.0335582572048281"
+        ixy="-1.44949890085259E-05"
+        ixz="0.000614379929060613"
+        iyy="0.0317868846274005"
+        iyz="-0.000116447848217514"
+        izz="0.0326509650523524" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/walle_head.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/walle_head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="walle_head_j"
+    type="fixed">
+    <origin
+      xyz="0.619759999999999 -0.0121736325383651 0.413108526723272"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="walle_head" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ur10_base">
+    <inertial>
+      <origin
+        xyz="-0.00287681901700804 -0.000162361622974369 0.0183343080758504"
+        rpy="0 0 0" />
+      <mass
+        value="0.706324319593749" />
+      <inertia
+        ixx="0.00114585793061116"
+        ixy="-6.21874343280215E-08"
+        ixz="3.53119557315341E-06"
+        iyy="0.00115563795040409"
+        iyz="-7.75034751904608E-06"
+        izz="0.0021288958389946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/ur10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/ur10.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ur10_j"
+    type="fixed">
+    <origin
+      xyz="-0.28323 -0.0010007 0.18041"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ur10_base" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_01">
+    <inertial>
+      <origin
+        xyz="-0.000129690379843006 0.0106827402385295 0.092399531614093"
+        rpy="0 0 0" />
+      <mass
+        value="3.07353619369966" />
+      <inertia
+        ixx="0.0114767843229334"
+        ixy="1.56442886936178E-05"
+        ixz="1.58867572926185E-05"
+        iyy="0.0107305808171032"
+        iyz="-0.000853542692507938"
+        izz="0.0101061259092838" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/01.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/01.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_01"
+    type="revolute">
+    <origin
+      xyz="-0.00254 0 0.024064"
+      rpy="0 0 0" />
+    <parent
+      link="ur10_base" />
+    <child
+      link="link_01" />
+    <axis
+      xyz="-0.0033894 0.0078814 -0.99996" />
+    <limit
+      lower="-3.14"
+      upper="1.50"
+      effort="1"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_12">
+    <inertial>
+      <origin
+        xyz="-0.00403933793485417 -0.184579089767708 0.168692913523683"
+        rpy="0 0 0" />
+      <mass
+        value="7.37860776949408" />
+      <inertia
+        ixx="0.0936189581878466"
+        ixy="0.00102560506293547"
+        ixz="3.05806369528424E-05"
+        iyy="0.0172122737488374"
+        iyz="0.000286423456910835"
+        izz="0.0922852714753548" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_12"
+    type="revolute">
+    <origin
+      xyz="0.00253999999999999 0 0.108016051516602"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="link_01" />
+    <child
+      link="link_12" />
+    <axis
+      xyz="0.0248821256625927 0.00796335729419362 -0.999658674129883" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="1"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_23">
+    <inertial>
+      <origin
+        xyz="0.00695605013099798 -0.000745910741484057 -0.119252589272163"
+        rpy="0 0 0" />
+      <mass
+        value="1.33383777518494" />
+      <inertia
+        ixx="0.00271427312195811"
+        ixy="1.01764484904809E-05"
+        ixz="0.000268693822751871"
+        iyy="0.0028917307581789"
+        iyz="-1.36815834817179E-05"
+        izz="0.0026372699616753" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/23.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/23.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_23"
+    type="fixed">
+    <origin
+      xyz="0.00253999999999999 -0.606993948483398 0.0406399999999979"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="link_12" />
+    <child
+      link="link_23" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_34">
+    <inertial>
+      <origin
+        xyz="-0.201916853829144 0.00698682516348603 -0.00239486917908178"
+        rpy="0 0 0" />
+      <mass
+        value="3.92494771785396" />
+      <inertia
+        ixx="0.00495218360063907"
+        ixy="0.00100393089810137"
+        ixz="0.000558357470982016"
+        iyy="0.0505755294525949"
+        iyz="-1.35101986831236E-05"
+        izz="0.050534064973198" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/34.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/34.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_34"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_23" />
+    <child
+      link="link_34" />
+    <axis
+      xyz="-0.0080008 -0.027654 -0.99959" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_45">
+    <inertial>
+      <origin
+        xyz="0.000227496972523833 -0.00816170352795731 -0.00888627413150182"
+        rpy="0 0 0" />
+      <mass
+        value="0.728497721623388" />
+      <inertia
+        ixx="0.00111503918992298"
+        ixy="-6.60987686743948E-07"
+        ixz="1.69203589509212E-06"
+        iyy="0.0010309191620223"
+        iyz="9.07933524385884E-05"
+        izz="0.000883756909419874" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/45.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/45.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_45"
+    type="fixed">
+    <origin
+      xyz="-0.57404 0.015 0.0015343"
+      rpy="0.0073998 0.027825 1.5491" />
+    <parent
+      link="link_34" />
+    <child
+      link="link_45" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_56">
+    <inertial>
+      <origin
+        xyz="-0.00201713615320021 -0.00942813125932965 0.010016991300194"
+        rpy="0 0 0" />
+      <mass
+        value="0.728501261487563" />
+      <inertia
+        ixx="0.00111501642067699"
+        ixy="1.39114164164508E-06"
+        ixz="1.01103212355247E-06"
+        iyy="0.00103237987321371"
+        iyz="-8.96280889683871E-05"
+        izz="0.000882340754292452" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/56.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/56.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_56"
+    type="revolute">
+    <origin
+      xyz="0.00324349270270768 -0.000862330903033337 -0.116532714128121"
+      rpy="-1.57880027579945 -0.0276576794108809 0.0218837926045398" />
+    <parent
+      link="link_45" />
+    <child
+      link="link_56" />
+    <axis
+      xyz="-0.0206635875345738 0.999755673954468 0.00784911116302056" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_67">
+    <inertial>
+      <origin
+        xyz="0.00105722721767587 0.00549451922945901 0.0131575855609647"
+        rpy="0 0 0" />
+      <mass
+        value="0.726843839364982" />
+      <inertia
+        ixx="0.00110966422273283"
+        ixy="-2.04353929912299E-06"
+        ixz="5.64573062238837E-06"
+        iyy="0.00102838845303955"
+        iyz="8.98626113741334E-05"
+        izz="0.000881097341652695" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/67.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/67.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_67"
+    type="revolute">
+    <origin
+      xyz="0 -0.0029883922973869 0.11684"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="link_56" />
+    <child
+      link="link_67" />
+    <axis
+      xyz="0.0141986851026597 -0.999683377991151 0.0207735675693348" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_78">
+    <inertial>
+      <origin
+        xyz="-0.00158153117974213 -1.7534827556398E-05 0.0373810901103749"
+        rpy="0 0 0" />
+      <mass
+        value="0.0337062568748666" />
+      <inertia
+        ixx="0.000219372061939013"
+        ixy="4.06841877511969E-07"
+        ixz="-1.42551879432975E-06"
+        iyy="0.000213557408275703"
+        iyz="-5.67193955052329E-07"
+        izz="0.000290995458234039" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/78.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/78.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_78"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="link_67" />
+    <child
+      link="link_78" />
+    <axis
+      xyz="-0.026512 -0.0078721 0.99962" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1"
+      velocity="0" />
+  </joint>
+  <!-- <link
+    name="sensor">
+    <inertial>
+      <origin
+        xyz="0.00128566813397625 0.000323186326652014 0.000991244425293525"
+        rpy="0 0 0" />
+      <mass
+        value="0.013046028983596" />
+      <inertia
+        ixx="9.08267305191656E-07"
+        ixy="-1.52526247707949E-07"
+        ixz="-4.64806332398072E-09"
+        iyy="2.77964330253813E-06"
+        iyz="1.27358172379802E-07"
+        izz="2.1573204797302E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/sensor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboharvest/meshes/sensor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sensor_j"
+    type="fixed">
+    <origin
+      xyz="0.00371289660333352 -0.0999312034619805 0.0398752657491165"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="67" />
+    <child
+      link="sensor" />
+    <axis
+      xyz="0 0 0" />
+  </joint> -->
+
+  <!-- <xacro:property name="walle_head" value="0.05" /> Size of square 'camera' box -->
+
+
+    <gazebo reference="base_link">
+        <xacro:base_link/>
+    </gazebo>
+    <gazebo reference="front_right">
+        <xacro:front_right/>
+    </gazebo>
+    <gazebo reference="front_left">
+        <xacro:front_left/>
+    </gazebo>
+    <gazebo reference="rear_left">
+        <xacro:rear_left/>
+    </gazebo>
+    <gazebo reference="rear_right">
+        <xacro:rear_right/>
+    </gazebo>
+    <gazebo reference="walle_head">
+        <xacro:walle_head/>
+    </gazebo>
+
+ <ros2_control name="GazeboSystem" type="system">
+   <hardware>
+     <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+   </hardware>
+
+   <!-- # Velocity Controllers -->
+
+   <joint name="front_right_j">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="front_left_j">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="rear_right_j">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="rear_left_j">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="joint_01">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="joint_12">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="joint_34">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>z
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="joint_56">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="joint_67">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+   <joint name="joint_78">
+      <command_interface name="velocity">
+          <param name="min">-1000.0</param>
+          <param name="max">1000.0</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+   </joint>
+  
+ 
+
+ <!-- Position Controller -->
+ 
+    <joint name="joint_01">
+        <command_interface name="position">
+            <param name="min">-3.14</param>
+            <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_12">
+        <command_interface name="position">
+            <param name="min">-3.14</param>
+            <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_34">
+        <command_interface name="position">
+            <param name="min">-3.14</param>
+            <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_56">
+        <command_interface name="position">
+            <param name="min">-3.14</param>
+            <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_67">
+        <command_interface name="position">
+            <param name="min">-3.14</param>
+            <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_78">
+        <command_interface name="position">
+            <param name="min">-3.14</param>
+            <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+            
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>$(find roboharvest)/config/control.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <!-- Odom -->
+  <!-- <gazebo>
+    <plugin name="odometry_plugin" filename="libodometry_plugin.so">
+      <frame>base_link</frame>
+      <world_frame>fixed_world</world_frame>
+    </plugin>
+  </gazebo> -->
+
+  <!-- IMU -->
+  <!-- <gazebo reference="base_link">
+  <gravity>true</gravity>
+  <sensor name="imu_sensor" type="imu">
+    <always_on>false</always_on>
+    <update_rate>100</update_rate>
+    <visualize>true</visualize>
+    <topic>imu</topic>
+    <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+      <topicName>imu</topicName>
+      <bodyName>base_link</bodyName>
+      <updateRateHZ>10.0</updateRateHZ>
+      <gaussianNoise>0.0</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+      <frameName>base_link</frameName>
+      <initialOrientationAsReference>false</initialOrientationAsReference>
+    </plugin>
+    <pose>0 0 0 0 0 0</pose>
+  </sensor>
+  </gazebo>  -->
+
+  <!-- # diff_drive -->
+  <gazebo>
+      <plugin name='skid_steer_drive' filename='libgazebo_ros_diff_drive.so'>
+        <ros>
+          <!-- Set namespace -->
+          <namespace>/</namespace>
+          <!-- Remap default topics -->
+          <remapping>odom:=wheel_odom</remapping>
+        </ros>
+        <!-- Update rate -->
+        <update_rate>50</update_rate>
+        <!-- Number of wheel pairs -->
+        <num_wheel_pairs>2</num_wheel_pairs>
+        <!-- wheels0 -->
+        <left_joint>rear_left_j</left_joint>
+        <right_joint>rear_right_j</right_joint>
+        <!-- wheels1-->
+        <left_joint>front_left_j</left_joint>
+        <right_joint>front_right_j</right_joint>
+        <!-- kinematics -->
+        <wheel_separation>0.8382</wheel_separation>
+        <wheel_separation>0.8382</wheel_separation>
+        <wheel_diameter>0.25224</wheel_diameter>
+        <wheel_diameter>0.25224</wheel_diameter>
+        <!-- limits -->
+        <max_wheel_torque>20</max_wheel_torque>
+        <max_wheel_acceleration>1.0</max_wheel_acceleration>
+        <!-- output -->
+        <publish_odom>true</publish_odom>
+        <publish_odom_tf>true</publish_odom_tf>
+        <publish_wheel_tf>false</publish_wheel_tf>
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>base_footprint</robot_base_frame>
+
+      </plugin>
+      <!-- <plugin name="SkidSteerDrivePlugin"
+        filename="skid_steer_drive/libDdsSkidSteerDrivePlugin.so">
+    <dds_domain_id>0</dds_domain_id>
+    <topic_name_twist>cmd_vel</topic_name_twist>
+    <topic_name_odometry>odom</topic_name_odometry>
+    <topic_name_joint>joint</topic_name_joint>
+    <right_front_joint>front_right_j</right_front_joint>
+    <right_rear_joint>rear_right_j</right_rear_joint>
+    <left_front_joint>front_left_j</left_front_joint>
+    <left_rear_joint>rear_left_j</left_rear_joint>
+    <wheel_separation>0.8382</wheel_separation>
+    <wheel_diameter>0.252</wheel_diameter>
+    <wheel_torque>20.0</wheel_torque>
+    <update_rate>20</update_rate>
+    <covariance_x>0.0001</covariance_x>
+    <covariance_y>0.0001</covariance_y>
+    <covariance_yaw>0.01</covariance_yaw> 
+</plugin> -->
+  </gazebo>
+
+
+  <!-- Lidar -->
+  <gazebo reference="walle_head">
+  <sensor name="lidar" type="ray">
+    <pose>0.0 0.0 0.0 -90 0 -90</pose>
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>5</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <resolution>1.00000</resolution>
+          <min_angle>0.000000</min_angle>
+          <max_angle>6.280000</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.120000</min>
+        <max>3.5</max>
+        <resolution>0.015000</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <remapping>~/out:=scan</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>base_link</frame_name>
+    </plugin>
+  </sensor>
+  </gazebo>  
+
+  <!-- Vaccum Gripper -->
+  <!-- <gazebo>
+  <plugin name='vacuum_gripper' filename='libgazebo_ros_vacuum_gripper.so'>
+
+    <ros>
+
+      <namespace>/</namespace>
+      <remapping>switch:=custom_switch</remapping>
+      <remapping>grasping:=custom_grasping</remapping>
+    </ros>
+    <link_name>78</link_name>
+
+    <max_distance>1</max_distance>
+    <fixed>ground_plane</fixed>
+    <fixed>wall</fixed>
+
+  </plugin>
+  </gazebo> -->
+
+ <!-- camera -->
+  <gazebo reference="walle_head">
+    <sensor type="camera" name="camera1">
+      <pose> 0 0 1.5 0 0 0 </pose>
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rrbot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>walle_head</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+
+
+</robot>
+
