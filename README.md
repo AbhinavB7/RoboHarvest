@@ -1,4 +1,4 @@
-# ROBOHARVEST-A-6DOF-Serial-Manipulator-Robot
+# RoboHarvest
 
 Modeling‬ ‭and‬ ‭simulation‬ ‭of‬ ‭an‬ ‭automated‬ ‭fruit‬ ‭picker‬ ‭robot‬ RoboHarvest‬ ‭a‬ ‭mobile‬ ‭serial‬ ‭manipulator‬‬ ‭designed‬ ‭to‬ ‭automate‬ ‭the‬ ‭task ‬‭of‬ plucking‬‭ fruits ‬‭from‬‭ trees‬‭ and‬‭ collecting‬‭ them‬ ‭in‬‭ the‬‭ bin‬‭ on‬‭ the‬ ‭robot using **INVERSE KINEMATICS**.
 
