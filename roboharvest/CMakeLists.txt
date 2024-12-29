@@ -20,7 +20,6 @@ launch
 worlds
 config
 rviz
-models
 scripts
 DESTINATION share/${PROJECT_NAME}/
 )
